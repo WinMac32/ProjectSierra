@@ -1,0 +1,7 @@
+** Main Game **
+- Construction kit really defines how this works since this needs to be designed to work with the output of the Construction Kit.
+
+** Construction Kit **
+- Move the TilesetCreator into the more modular, and incomplete, MapMaker. The whole thing needs to be one utility.
+- Stop using -100 as a magic number in the tileset files. Seriously. Why do I do these things.
+- In fact, why don't I switch to using a SQLite database for all this information. Yeah. Do this.

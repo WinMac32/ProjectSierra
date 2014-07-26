@@ -1,31 +1,42 @@
 package ca.viaware.mapmaker.obj.asset;
 
+import java.util.Iterator;
+
 public enum AssetType {
 
-    WEAPON(0),
-    STATIC(1),
-    LIVING(2),
-    CONSUMABLE(3),
-    CLOTHING(4),
-    SOUND(5),
-    QUEST(6),
-    INTELLIGENCE(7),
-    EFFECT(8),
-    DIALOG(9),
-    TEXTURE(10),
-    ANIMATION(11);
+    WEAPON(0, "Weapon"),
+    STATIC(1, "Static"),
+    LIVING(2, "Living"),
+    CONSUMABLE(3, "Consumable"),
+    CLOTHING(4, "Clothing"),
+    SOUND(5, "Sound"),
+    QUEST(6, "Quest"),
+    INTELLIGENCE(7, "AI Package"),
+    EFFECT(8, "Effect"),
+    DIALOG(9, "Dialog"),
+    TEXTURE(10, "Texture"),
+    ANIMATION(11, "Animation");
+
+    //Used by view to generate UI
+    public static final int ASSET_COUNT = 12;
 
     private int typeID;
+    private String humanReadable;
 
-    AssetType(int typeID) {
+    AssetType(int typeID, String humanReadable) {
         this.typeID = typeID;
+        this.humanReadable = humanReadable;
     }
 
     public int getTypeID() {
         return typeID;
     }
 
-    public AssetType getAssetType(int typeID) {
+    public String getHumanReadable() {
+        return humanReadable;
+    }
+
+    public static AssetType getAssetType(int typeID) {
         for (AssetType t : AssetType.values()) {
             if (t.getTypeID() == typeID) return t;
         }

@@ -1,6 +1,7 @@
 package ca.viaware.mapmaker.obj.asset;
 
 import java.awt.*;
+import java.io.InputStream;
 
 public abstract class GameAsset {
 
@@ -33,4 +34,7 @@ public abstract class GameAsset {
     public AssetType getAssetType() {
         return assetType;
     }
+
+    //TODO This might not be the best way to do this. Food for thought.
+    protected abstract void loadFromStream(InputStream input);
 }

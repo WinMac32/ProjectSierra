@@ -10,6 +10,11 @@ public class AssetManager {
         assets = new ArrayList<GameAsset>();
     }
 
+    /**
+     * Returns all assets of specified AssetType
+     * @param type
+     * @return All assets of AssetType, empty list if none
+     */
     public ArrayList<GameAsset> getAssetsByType(AssetType type) {
         ArrayList<GameAsset> sorted = new ArrayList<GameAsset>();
 
@@ -18,6 +23,19 @@ public class AssetManager {
         }
 
         return sorted;
+    }
+
+    /**
+     * Get asset with provided ID
+     * @param id Asset id
+     * @return Asset if exists, null if not found
+     */
+    public GameAsset getAssetByID(String id) {
+        for (GameAsset asset : assets) {
+            if (asset.getAssetID().equals(id)) return asset;
+        }
+
+        return null;
     }
 
     public ArrayList<GameAsset> getAllAssets() {

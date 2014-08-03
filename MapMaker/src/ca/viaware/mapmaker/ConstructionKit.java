@@ -1,6 +1,7 @@
 package ca.viaware.mapmaker;
 
 import ca.viaware.mapmaker.gui.windows.control.ControlWindow;
+import ca.viaware.mapmaker.obj.GameManager;
 
 import javax.swing.*;
 
@@ -18,7 +19,9 @@ public class ConstructionKit {
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-        new ControlWindow().setVisible(true);
+
+        GameManager gameManager = new GameManager();
+        new ControlWindow(gameManager).setVisible(true);
     }
 
 }

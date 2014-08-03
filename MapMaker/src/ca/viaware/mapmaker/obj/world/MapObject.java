@@ -1,4 +1,4 @@
-package ca.viaware.mapmaker.obj;
+package ca.viaware.mapmaker.obj.world;
 
 import ca.viaware.mapmaker.obj.asset.GameAsset;
 

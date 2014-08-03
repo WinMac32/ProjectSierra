@@ -1,8 +1,6 @@
 package ca.viaware.mapmaker.gui.windows.world.explorer;
 
-import ca.viaware.api.gui.base.VLabel;
-import ca.viaware.api.gui.base.VList;
-import ca.viaware.api.gui.base.VListElement;
+import ca.viaware.api.gui.base.*;
 import ca.viaware.mapmaker.obj.world.World;
 
 import java.awt.*;
@@ -18,6 +16,7 @@ public class WorldListElement extends VListElement implements ActionListener {
         super(parent);
 
         this.world = world;
+        this.explorerWindow = explorerWindow;
 
         setLayout(new GridLayout(1, 2));
 
@@ -25,10 +24,25 @@ public class WorldListElement extends VListElement implements ActionListener {
         add(new VLabel(world.getWorldName()));
 
         addDoubleClickActionListener(this);
+
+        VPopupMenu popupMenu = new VPopupMenu();
+        popupMenu.add(new VMenuItem("New world", this, "POPUP_NEW"));
+        popupMenu.add(new VMenuItem("Edit world", this, "POPUP_EDIT"));
+        popupMenu.add(new VMenuItem("Delete world", this, "POPUP_DELETE"));
+        setComponentPopupMenu(popupMenu);
     }
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        explorerWindow.listElementClick(world);
+        String cmd = (actionEvent.getActionCommand() != null ? actionEvent.getActionCommand() : "");
+        if (cmd.equals("POPUP_NEW")) {
+            explorerWindow.newWorld();
+        } else if (cmd.equals("POPUP_EDIT")) {
+            explorerWindow.listElementClick(world);
+        } else if (cmd.equals("POPUP_DELETE")) {
+            //TODO Delete that shit
+        } else {
+            explorerWindow.listElementClick(world);
+        }
     }
 }

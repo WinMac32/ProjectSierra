@@ -61,3 +61,6 @@ build/
 
 #Mac shit
 .DS_Store
+
+#Other
+lib/

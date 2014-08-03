@@ -21,4 +21,6 @@ Right now it mostly consists of a hodge podge of incomplete code that I've start
 
 You can tell I've done a lot of planning. :P
 
-Oh and another thing. The utilities rely on ViaWareAPI, which is another hodge podge of code accumulated from different projects. It's got some database stuff, GUI stuff, utilities, etc, it's probably useful for things.
+Oh and another thing. The utilities rely on ViaWareAPI, which is another hodge podge of code accumulated from different projects. It's got some database stuff, GUI stuff, utilities, etc, it's probably useful for things. ViaWareAPI in turn relies on sqlite4java for its database functionality. You can grab that at https://code.google.com/p/sqlite4java/
+
+No. I'm not using anything for dependency management right now. It might be on a todo list somewhere. Probably not.

@@ -1,4 +1,3 @@
-/*
 Copyright 2014 Seth Traverse
 
 This file is part of Project Sierra.
@@ -15,8 +14,3 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Project Sierra.  If not, see <http://www.gnu.org/licenses/>.
- */
-package ca.viaware.mapmaker.obj.asset.sys;
-
-public class EffectAsset {
-}
